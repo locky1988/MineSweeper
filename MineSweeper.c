@@ -109,7 +109,7 @@ int main()
 									   continue;
 								   }
 								   wattron(w_grid[pos], COLOR_PAIR(2));
-								   strcpy(str, "TT");
+								   strcpy(str, "[]");
 								   mvwaddstr(w_grid[pos], 1, 1, str);
 								   wattroff(w_grid[pos], COLOR_PAIR(2));
 								   wrefresh(w_grid[pos]);
@@ -574,7 +574,7 @@ int compute_blank(int x, int y)
 	werase(w_grid[ARR_SIZE_Y*x+y]);
 
 	number = glb_arr[x][y];
-	if(number==9) strcpy(str, "TT");
+	if(number==9) strcpy(str, "[]");
 	else if(number==0) strcpy(str, "  ");
 	else sprintf(str, "%d ", number);
 
@@ -676,7 +676,7 @@ int game_over()
 			if(glb_arr[i][j]==9) {
 				if(flg_arr[i][j]==2) wattron(w_grid[i*ARR_SIZE_Y+j], COLOR_PAIR(2));
 				else wattron(w_grid[i*ARR_SIZE_Y+j], COLOR_PAIR(1));
-				mvwaddstr(w_grid[i*ARR_SIZE_Y+j], 1, 1, "TT");
+				mvwaddstr(w_grid[i*ARR_SIZE_Y+j], 1, 1, "[]");
 				if(flg_arr[i][j]==2) wattroff(w_grid[i*ARR_SIZE_Y+j], COLOR_PAIR(2));
 				else wattroff(w_grid[i*ARR_SIZE_Y+j], COLOR_PAIR(1));
 				wrefresh(w_grid[i*ARR_SIZE_Y+j]);
